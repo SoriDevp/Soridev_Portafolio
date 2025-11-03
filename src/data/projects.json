@@ -1,0 +1,29 @@
+[
+    {
+        "id": "proj-01",
+        "name": "Mi Primer Portafolio",
+        "description": "Una aplicación web interactiva construida con React y TailwindCSS para mostrar mis habilidades y proyectos.",
+        "technologies": ["React", "TailwindCSS", "Vite", "Framer Motion"],
+        "readmeUrl": "./projects/todo/README.md",
+        "repoUrl": "https://github.com/tu-usuario/proyecto-1",
+        "liveUrl": "https://soridev.com"
+    },
+    {
+        "id": "proj-02",
+        "name": "Puchitag",
+        "description": "Un backend RESTful construido con Node.js y Express para gestionar una lista de tareas.",
+        "technologies": ["Node.js", "Express", "MongoDB"],
+        "readmeUrl": "./projects/puchitag/README.md",
+        "repoUrl": "https://github.com/tu-usuario/proyecto-2",
+        "liveUrl": "https://soriyama.com"
+    },
+    {
+        "id": "proj-03",
+        "name": "Clon de E-commerce",
+        "description": "Una maqueta de una tienda online con carrito de compras y catálogo de productos.",
+        "technologies": ["HTML5", "CSS3", "JavaScript"],
+        "readmeUrl": "./projects/puchitag/README.md",
+        "repoUrl": "https://github.com/tu-usuario/proyecto-3",
+        "liveUrl": "https://tu-proyecto-3.netlify.app"
+    }
+]

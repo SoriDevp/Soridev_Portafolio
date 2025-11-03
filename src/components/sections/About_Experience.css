@@ -1,0 +1,132 @@
+/* Contenedor principal de la línea de tiempo */
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 2rem; /* Espacio entre proyectos */
+}
+
+/* Línea vertical central (la dibujamos en el contenedor) */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  width: 3px;
+  background-color: #3c3c3c; /* Color de la línea */
+  transform: translateX(-50%);
+}
+
+.timeline-project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.project-info {
+  width: 45%;
+  padding: 1.5rem;
+  background-color: #252526; /* Un fondo ligeramente más claro */
+  border-radius: 8px;
+  border: 1px solid #3c3c3c;
+}
+
+.timeline-milestone {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007acc; /* Círculo de hito */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  border: 4px solid #1e1e1e;
+  z-index: 10;
+}
+
+/* --- Estilo Zig-Zag --- */
+
+/* Items impares (1, 3, 5...) */
+.timeline-project-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-project-item:nth-child(odd) .project-info {
+  text-align: left;
+}
+
+/* Items pares (2, 4, 6...) */
+.timeline-project-item:nth-child(even) {
+  flex-direction: row;
+}
+
+.timeline-project-item:nth-child(even) .project-info {
+  text-align: left;
+}
+
+/* --- Contenido del proyecto --- */
+
+.project-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00aaff;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.tech-icon-small {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 25px; /* Mueve la línea a la izquierda, al centro del nuevo hito */
+    transform: translateX(0);
+  }
+
+  .timeline-project-item,
+  .timeline-project-item:nth-child(odd),
+  .timeline-project-item:nth-child(even) {
+    flex-direction: row; /* Forzamos la dirección */
+    padding-left: 70px; /* Creamos espacio a la izquierda para el hito */
+    align-items: flex-start; /* Alineamos arriba por si el texto ocupa varias líneas */
+  }
+
+  .timeline-milestone {
+    position: absolute;
+    left: 0; /* Posicionamos el hito en el espacio creado */
+    top: 0;
+  }
+
+  .project-info {
+    width: 100%; /* El texto ahora ocupa todo el ancho del contenedor (que ya tiene padding) */
+  }
+}
