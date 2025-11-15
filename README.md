@@ -219,6 +219,7 @@ Estructura que organiza la formación en tres categorías:
 #### Componentes Especializados
 
 - **ProjectExplorer**: Explorador de proyectos con iconos de tecnologías
+- **ProjectDetails**: Vista detallada de proyectos con iconos de tecnologías en lugar de texto, obtención automática de README desde GitHub
 - **Terminal**: Componente de terminal animado con efecto de escritura
 - **About_Introduction**: Galaxia de tecnologías animada
 - **About_Education**: Línea de tiempo de formación
@@ -243,3 +244,5 @@ Este proyecto ha pasado por una refactorización significativa para mejorar su a
 - **Correcciones de Diseño Responsivo**:
   - Se solucionaron múltiples problemas de layout en dispositivos móviles, incluyendo la visibilidad del avatar en la cabecera y la superposición de elementos en las líneas de tiempo.
   - Se mejoró la experiencia en el explorador de proyectos para dispositivos móviles.
+- **Mejoras en Visualización de Tecnologías**:
+  - Se implementó visualización de iconos de tecnologías en `ProjectDetails` en lugar de texto, mejorando la experiencia visual y manteniendo tooltips informativos.
