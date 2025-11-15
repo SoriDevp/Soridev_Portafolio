@@ -105,6 +105,31 @@
   height: 16px;
 }
 
+/* --- Botones de acción del proyecto --- */
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.project-actions button,
+.project-actions a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.project-actions button:hover,
+.project-actions a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .experience-timeline::before {
