@@ -7,22 +7,47 @@
       "description": "Formación integral en desarrollo de software, bases de datos, sistemas y programación móvil."
     }
   ],
-  "complementary": [
-    {
-      "title": "Full Stack Developer",
-      "institution": "OpenBootcamp",
-      "date": "2024",
-      "description": "Bootcamp intensivo cubriendo tecnologías front-end y back-end."
-    },
-    {
-      "title": "Git y GitHub, de cero a experto",
-      "institution": "Udemy",
-      "date": "2023",
-      "description": "Curso completo sobre control de versiones con Git y colaboración en GitHub."
-    }
-  ],
-  "languages": [
-    { "title": "Español", "level": "Nativo" },
-    { "title": "Inglés", "level": "Intermedio (B1)" }
-  ]
+    "complementary": [
+
+      {
+        "title": "Git y GitHub, de cero a experto",
+        "institution": "Udemy",
+        "date": "2025",
+        "description": "Curso completo sobre control de versiones con Git y colaboración en GitHub."
+      },
+      {
+        "title": "JavaScript Moderno",
+        "institution": "Udemy",
+        "date": "2025",
+        "description": "Curso completo de JavaScript moderno (ES6+) cubriendo conceptos avanzados, async/await, módulos y mejores prácticas."
+      },
+      {
+        "title": "React JS",
+        "institution": "Udemy",
+        "date": "2025",
+        "description": "Curso completo de React JS desde fundamentos hasta conceptos avanzados: hooks, context API, routing y gestión de estado."
+      },
+      {
+        "title": "Next.js",
+        "institution": "Udemy",
+        "date": "2025",
+        "description": "Curso de Next.js cubriendo SSR, SSG, API routes, optimización de rendimiento y despliegue."
+      },
+      {
+        "title": "Desarrollo FullStack con TypeScript",
+        "institution": "Udemy",
+        "date": "2025",
+        "description": "Curso completo de desarrollo FullStack utilizando TypeScript, cubriendo front-end, back-end y bases de datos."
+      },
+      {
+        "title": "Desarrollo con IA",
+        "institution": "BigSchool",
+        "date": "2025",
+        "description": "Curso sobre integración y desarrollo de aplicaciones con inteligencia artificial y machine learning."
+      }
+    ],
+      "languages": [
+        { "title": "Español", "level": "Nativo" },
+        { "title": "Inglés", "level": "Básico" }
+      ]
 }

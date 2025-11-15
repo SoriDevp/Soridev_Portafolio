@@ -14,6 +14,7 @@ import {
   IconReact,
   IconTailwindCSS,
   IconTypeScript,
+  IconMySQL,
 } from '../../assets/icons/tech';
 
 const technologies = [
@@ -27,6 +28,7 @@ const technologies = [
   { Icon: IconHTML, name: 'HTML5' },
   { Icon: IconApi, name: 'APIs' },
   { Icon: IconIA, name: 'IA' },
+  { Icon: IconMySQL, name: 'MySQL' },
 ];
 
 export default function About_Education() {
@@ -57,7 +59,7 @@ export default function About_Education() {
           {loading && <p>Cargando información...</p>}
           {education && (
             <>
-              <h3 className="timeline-title">Formación Reglada</h3>
+              <h3 className="timeline-title">Formación Profesional</h3>
               {education.formal.map(item => (
                 <div key={item.title} className="timeline-item">
                   <h4 className="item-title">{item.title}</h4>

@@ -10,7 +10,9 @@ import {
   IconCSS3,
   IconTailwindCSS,
   IconTypeScript,
-  IconNextJs
+  IconNextJs,
+  IconVite,
+  IconFramerMotion,
 } from '../../assets/icons/tech';
 import { VscGithubInverted, VscLinkExternal } from 'react-icons/vsc';
 
@@ -31,8 +33,8 @@ const techIconMap = {
   "TS": <IconTypeScript />,
   NextJs: <IconNextJs />,
   "Next.js": <IconNextJs />,
-  Vite: null, // Vite no tiene icono aún, se mostrará solo el texto
-  "Framer Motion": null, // Framer Motion no tiene icono aún
+  Vite: <IconVite />, // Vite no tiene icono aún, se mostrará solo el texto
+  "Framer Motion": <IconFramerMotion />, // Framer Motion no tiene icono aún
 };
 
 export default function About_Experience() {

@@ -8,3 +8,6 @@ export { default as IconCSS3 } from './IconCSS3';
 export { default as IconApi } from './IconApi';
 export { default as IconIA } from './IconIA';
 export { default as IconNextJs } from './IconNextJs';
+export { default as IconVite } from './IconVite';
+export { default as IconFramerMotion } from './IconFramerMotion';
+export { default as IconMySQL } from './IconMySQL';

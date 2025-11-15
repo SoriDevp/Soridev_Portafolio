@@ -20,7 +20,7 @@
         "name": "Mi Primer Portafolio",
         "description": "Una aplicación web interactiva construida con React y TailwindCSS para mostrar mis habilidades y proyectos.",
         "technologies": ["React", "TailwindCSS", "Vite", "Framer Motion"],
-        "repoUrl": "https://github.com/SoriDevp/Protafolio_V1",
+        "repoUrl": "https://github.com/SoriDevp/Portafolio_V1",
         "liveUrl": "portafolio-v1.soridev.com"
     },
     {

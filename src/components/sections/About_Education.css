@@ -14,12 +14,13 @@
   min-height: 450px;
   position: relative;
   overflow: visible; /* Permite que los iconos se vean completos */
+  padding: 20px; /* Espacio adicional para evitar que los iconos se corten */
 }
 
 .tech-galaxy {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
 }
 
 .tech-icon-wrapper {
@@ -56,17 +57,61 @@
   opacity: 1;
 }
 
-/* Posicionamiento y delays de animación */
-.tech-icon-0 { top: -20%; left: 40%; animation-delay: 0s; }
-.tech-icon-1 { top: 15%; left: -20%; animation-delay: -1s; }
-.tech-icon-2 { top: 75%; left: -10%; animation-delay: -2s; }
-.tech-icon-3 { top: 100%; left: 45%; animation-delay: -3s; }
-.tech-icon-4 { top: 70%; left: 100%; animation-delay: -4s; }
-.tech-icon-5 { top: 10%; left: 105%; animation-delay: -5s; }
-.tech-icon-6 { top: 50%; left: 50%; animation: float-center 6s ease-in-out infinite; }
-.tech-icon-7 { top: -10%; left: 80%; animation-delay: -6s; }
-.tech-icon-8 { top: 40%; left: 115%; animation-delay: -7s; }
-.tech-icon-9 { top: 85%; left: 70%; animation-delay: -8s; }
+/* Posicionamiento y delays de animación - Distribución mejorada para evitar superposiciones */
+.tech-icon-0 {
+  top: 5%;
+  left: 50%;
+  margin-left: -25px;
+  animation-delay: 0s;
+}
+.tech-icon-1 {
+  top: 20%;
+  left: 15%;
+  animation-delay: -1s;
+}
+.tech-icon-2 {
+  top: 75%;
+  left: 10%;
+  animation-delay: -2s;
+}
+.tech-icon-3 {
+  top: 90%;
+  left: 50%;
+  margin-left: -25px;
+  animation-delay: -3s;
+}
+.tech-icon-4 {
+  top: 70%;
+  left: 85%;
+  animation-delay: -4s;
+}
+.tech-icon-5 {
+  top: 15%;
+  left: 85%;
+  animation-delay: -5s;
+}
+.tech-icon-6 {
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+  animation: float-center 6s ease-in-out infinite;
+}
+.tech-icon-7 {
+  top: 5%;
+  left: 75%;
+  animation-delay: -6s;
+}
+.tech-icon-8 {
+  top: 40%;
+  left: 90%;
+  animation-delay: -7s;
+}
+.tech-icon-9 {
+  top: 80%;
+  left: 70%;
+  animation-delay: -8s;
+}
 
 /* --- Columna Derecha: Línea de Tiempo --- */
 .timeline-container {
@@ -92,7 +137,7 @@
 
 /* El punto en la línea de tiempo */
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -2.5rem; /* (padding-left + border-width) / 2 - dot-width / 2 */
   top: 0.3rem;
@@ -143,17 +188,33 @@
 
 /* --- Animaciones --- */
 @keyframes float {
-  0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-  25% { transform: translateY(-15px) translateX(10px) rotate(5deg); }
-  50% { transform: translateY(0px) translateX(-10px) rotate(0deg); }
-  75% { transform: translateY(15px) translateX(10px) rotate(-5deg); }
-  100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0px) translateX(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(15px) translateX(10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
 }
 
 @keyframes float-center {
-  0% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-10px) scale(1.05); }
-  100% { transform: translateY(0px) scale(1); }
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
 }
 
 /* --- Responsive --- */
