@@ -1,7 +1,69 @@
 import { useState, useEffect } from 'react';
 import ReactMarkdown from "react-markdown";
-import { VscGithubInverted, VscLinkExternal } from 'react-icons/vsc';
+import { VscGithubInverted, VscLinkExternal, VscFileCode } from 'react-icons/vsc';
 import { fetchGitHubReadme } from '../utils/githubUtils';
+import {
+    IconReact,
+    IconTypeScript,
+    IconJS,
+    IconNodeJs,
+    IconTailwindCSS,
+    IconHTML,
+    IconCSS3,
+    IconVite,
+    IconFramerMotion,
+    IconNextJs,
+    IconMySQL,
+    IconApi,
+    IconIA
+} from '../assets/icons/tech';
+
+// Componente para seleccionar el icono correcto según la tecnología
+const TechIcon = ({ technology, className = "w-8 h-8" }) => {
+    // Normalizamos el nombre de la tecnología
+    const techKey = technology?.toLowerCase().trim();
+
+    switch (techKey) {
+        case 'typescript':
+        case 'ts':
+            return <IconTypeScript className={className} />;
+        case 'react':
+            return <IconReact className={className} />;
+        case 'javascript':
+        case 'js':
+            return <IconJS className={className} />;
+        case 'node.js':
+        case 'nodejs':
+            return <IconNodeJs className={className} />;
+        case 'tailwindcss':
+        case 'tailwind':
+            return <IconTailwindCSS className={className} />;
+        case 'html5':
+        case 'html':
+            return <IconHTML className={className} />;
+        case 'css3':
+        case 'css':
+            return <IconCSS3 className={className} />;
+        case 'vite':
+            return <IconVite className={className} />;
+        case 'framer motion':
+        case 'framermotion':
+            return <IconFramerMotion className={className} />;
+        case 'next.js':
+        case 'nextjs':
+            return <IconNextJs className={className} />;
+        case 'mysql':
+            return <IconMySQL className={className} />;
+        case 'api':
+        case 'apis':
+            return <IconApi className={className} />;
+        case 'ia':
+        case 'ai':
+            return <IconIA className={className} />;
+        default:
+            return <VscFileCode className={className} />;
+    }
+};
 
 export default function ProjectDetails({ project }) {
     const [readme, setReadme] = useState("");
@@ -93,9 +155,15 @@ export default function ProjectDetails({ project }) {
                 {/* --- TECNOLOGÍAS --- */}
                 <section className="py-6 border-b border-gray-700">
                     <h2 className="text-xl font-semibold text-white mb-3">Tecnologías Utilizadas</h2>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-4 items-center">
                         {project.technologies.map(tech => (
-                            <span key={tech} className="bg-[#2a2d2e] text-blue-300 text-sm font-mono px-3 py-1 rounded-full">{tech}</span>
+                            <div
+                                key={tech}
+                                className="flex items-center justify-center bg-[#2a2d2e] p-3 rounded-lg border border-[#3c3c3c] hover:border-blue-400 transition-colors group"
+                                title={tech}
+                            >
+                                <TechIcon technology={tech} />
+                            </div>
                         ))}
                     </div>
                 </section>

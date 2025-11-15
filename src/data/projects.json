@@ -28,7 +28,7 @@
         "name": "Portafolio VS-Code Theme",
         "description": "Una aplicación web interactiva construida con React y TailwindCSS para mostrar mis habilidades y proyectos.",
         "technologies": ["React", "TailwindCSS", "Vite", "Framer Motion"],
-        "repoUrl": "https://github.com/tu-usuario/proyecto-1",
+        "repoUrl": "https://github.com/SoriDevp/Soridev_Portafolio",
         "liveUrl": "https://soridev.com"
     }
 ]
