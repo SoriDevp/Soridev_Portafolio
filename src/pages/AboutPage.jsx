@@ -19,16 +19,16 @@ export default function AboutPage() {
     return (
         <div className="flex flex-col h-full w-full bg-[#1e1e1e] text-gray-200 overflow-hidden">
             {/* Cabecera */}
-            <header className="relative flex flex-col md:flex-row items-center md:gap-6 border-b border-[#3c3c3c] p-6">
-                <div className="flex-shrink-0 w-40 h-40 md:w-24 md:h-24 bg-[#2d2d2d] rounded-full md:rounded-xl flex items-center justify-center z-10">
+            <header className="relative flex flex-col md:flex-row items-center md:gap-6 border-b md:px-4 md:pb-4 border-[#3c3c3c] pt-4 ">
+                <div className=" w-32 h-32  rounded-full md:rounded-xl flex items-center justify-center z-10">
                     <img src={Avatar} alt="Esteban" className="rounded-full md:rounded-xl" />
                 </div>
-                <div className="relative flex flex-col justify-center text-center md:text-left -mt-8 md:mt-0 bg-[#252526] md:bg-transparent p-4 pt-10 md:p-0 rounded-lg md:rounded-none">
-                    <h1 className="text-2xl font-semibold text-gray-100">Esteban Calo – Desarrollador de Software</h1>
-                    <p className="text-sm text-gray-400">Profesional en desarrollo multiplataforma y web, comprometido con la calidad y la mejora continua.</p>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-gray-400">
-                        <span className="flex items-center gap-1"><FaStar className="text-yellow-400" /> 5.0</span>
-                        <span>10k+ descargas</span>
+                <div className="relative w-full flex flex-col justify-center text-center md:text-left -mt-8 md:mt-0 bg-[#252526] md:bg-transparent p-4 pt-10 md:p-0 ">
+                    <h1 className="text-md md:text-2xl font-semibold text-gray-100">Esteban Calo (SoriDev) <span className="hidden md:inline">– Desarrollador de Software</span></h1>
+                    <p className="text-sm text-gray-400 hidden md:block">Profesional en desarrollo multiplataforma y web, comprometido con la calidad y la mejora continua.</p>
+                    <div className="flex items-center justify-center md:justify-start gap-4 mt-2 text-sm text-gray-400">
+                        {/* <span className="flex items-center gap-1"><FaStar className="text-yellow-400" /> 5.0</span>
+                        <span>10k+ descargas</span> */}
                         <a href="https://github.com/SoriDevp" target="_blank" className="flex items-center gap-1 hover:text-white"><FaGithub /> GitHub</a>
                         <a href="https://www.linkedin.com/in/estebancalo" target="_blank" className="flex items-center gap-1 hover:text-white"><FaLinkedin /> LinkedIn</a>
                     </div>

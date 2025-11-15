@@ -29,7 +29,7 @@ const technologies = [
   { Icon: IconIA, name: 'IA' },
 ];
 
-const About_Education = () => {
+export default function About_Education() {
   const { education, loading } = useEducationData();
 
   return (
@@ -91,4 +91,3 @@ const About_Education = () => {
   );
 };
 
-export default About_Education;

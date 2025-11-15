@@ -5,8 +5,7 @@ import ProjectsPage from '../../pages/ProjectsPage';
 import AboutPage from '../../pages/AboutPage';
 import ContactPage from '../../pages/ContactPage';
 import SettingsPage from '../../pages/SettingsPage';
-import SettingsPage_V2 from '../../pages/SettingsPage_V2';
-import SettingsPage_V3 from '../../pages/SettingsPage_V3';
+
 // Importa tus otras páginas aquí
 
 function Content() {
@@ -23,10 +22,8 @@ function Content() {
             case 'contact':
                 return <ContactPage />;
             case "settings":
-                // return <SettingsPage />;
+                return <SettingsPage />;
 
-                return <SettingsPage_V2 />;
-            // return <SettingsPage_V3 />;
             // Agrega más casos según tus secciones
             default:
                 return <HomePage />;

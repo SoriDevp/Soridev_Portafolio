@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
-import { getProjects } from '../data/projects';
+import { useProjectsData } from '../hooks/useProjectsData';
 import { IconReact, IconTypeScript, IconJS, IconNodeJs, IconTailwindCSS, IconHTML, IconCSS3 } from '../assets/icons/tech';
 import { VscFileCode } from 'react-icons/vsc'; // Icono por defecto
 
@@ -16,15 +16,15 @@ const TechIcon = ({ technology, ...props }) => {
         case 'react':
             return <IconReact {...props} />;
         case 'javascript':
-            return <IconJavaScript {...props} />;
+            return <IconJS {...props} />;
         case 'node.js':
             return <IconNodeJs {...props} />;
         case 'tailwindcss':
             return <IconTailwindCSS {...props} />;
         case 'html5':
             return <IconHTML {...props} />;
-        case 'css':
-            return <IconCSS {...props} />;
+        case 'css3':
+            return <IconCSS3 {...props} />;
         default:
             return <VscFileCode {...props} />;
     }
@@ -32,8 +32,20 @@ const TechIcon = ({ technology, ...props }) => {
 
 // Recibe la lista de proyectos como prop, pero el estado lo maneja el contexto.
 export default function ProjectExplorer() {
-    const projects = getProjects();
-    const { selectedProject, setSelectedProject } = usePortfolio();
+    const { projects, loading } = useProjectsData();
+    const { selectedProject, setSelectedProject, closePanel } = usePortfolio();
+
+
+    const handleClick = (project) => {
+        setSelectedProject(project);
+        if (window.innerWidth < 768) {
+            closePanel();
+        }
+    };
+    if (loading) {
+        return <div>Cargando...</div>; // O un indicador de carga si lo prefieres
+    }
+
 
     return (
         // Hemos ajustado el ancho y quitado el margen superior para que se integre mejor.
@@ -47,7 +59,7 @@ export default function ProjectExplorer() {
                     {projects.map((project) => (
                         <li
                             key={project.id}
-                            onClick={() => setSelectedProject(project)}
+                            onClick={() => handleClick(project)}
                             className={`flex items-center gap-2 cursor-pointer px-2 py-1 rounded transition-colors duration-150 ${selectedProject?.id === project.id
                                 ? "bg-[#094771] text-white" // Estilo de selección más marcado
                                 : "hover:bg-[#383838]"

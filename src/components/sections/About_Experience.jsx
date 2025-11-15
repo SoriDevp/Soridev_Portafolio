@@ -30,7 +30,7 @@ const projectTimeline = [
   projects.find(p => p.id === 'proj-01'), // Y finalmente el front-end moderno
 ].filter(Boolean); // Filtramos por si algún proyecto no se encuentra
 
-const About_Experience = () => {
+export default function About_Experience() {
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-bold mb-4 text-cyan-400">Experiencia y Crecimiento</h2>
@@ -68,4 +68,3 @@ const About_Experience = () => {
   );
 };
 
-export default About_Experience;

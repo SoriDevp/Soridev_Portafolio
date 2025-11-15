@@ -1,33 +1,69 @@
 import { useState, useEffect } from 'react';
 import ReactMarkdown from "react-markdown";
 import { VscGithubInverted, VscLinkExternal } from 'react-icons/vsc';
+import { fetchGitHubReadme } from '../utils/githubUtils';
 
 export default function ProjectDetails({ project }) {
     const [readme, setReadme] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
-    // La ruta a los archivos del proyecto en la carpeta `public`
-    const projectPath = `projects/${project.id}`;
-
     useEffect(() => {
         setIsLoading(true);
-        // Usamos la ruta relativa desde la raíz del sitio (la carpeta public)
-        fetch(project.readmeUrl)
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('README.md no encontrado.');
-                }
-                return res.text();
-            })
-            .then(text => {
-                setReadme(text);
-                setIsLoading(false);
-            })
-            .catch(error => {
-                console.error("Error al cargar el README:", error);
-                setReadme("No se pudo cargar el archivo README.md para este proyecto.");
-                setIsLoading(false);
-            });
+        
+        // Si hay repoUrl, intentar obtener el README desde GitHub
+        if (project.repoUrl) {
+            fetchGitHubReadme(project.repoUrl)
+                .then(text => {
+                    setReadme(text);
+                    setIsLoading(false);
+                })
+                .catch(error => {
+                    console.error("Error al cargar el README desde GitHub:", error);
+                    // Si falla GitHub, intentar con readmeUrl local como fallback
+                    if (project.readmeUrl) {
+                        return fetch(project.readmeUrl)
+                            .then(res => {
+                                if (!res.ok) {
+                                    throw new Error('README.md no encontrado.');
+                                }
+                                return res.text();
+                            })
+                            .then(text => {
+                                setReadme(text);
+                                setIsLoading(false);
+                            });
+                    } else {
+                        setReadme("No se pudo cargar el archivo README.md para este proyecto.");
+                        setIsLoading(false);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error al cargar el README local:", error);
+                    setReadme("No se pudo cargar el archivo README.md para este proyecto.");
+                    setIsLoading(false);
+                });
+        } else if (project.readmeUrl) {
+            // Si no hay repoUrl pero sí readmeUrl, usar el local
+            fetch(project.readmeUrl)
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error('README.md no encontrado.');
+                    }
+                    return res.text();
+                })
+                .then(text => {
+                    setReadme(text);
+                    setIsLoading(false);
+                })
+                .catch(error => {
+                    console.error("Error al cargar el README:", error);
+                    setReadme("No se pudo cargar el archivo README.md para este proyecto.");
+                    setIsLoading(false);
+                });
+        } else {
+            setReadme("Este proyecto no tiene README disponible.");
+            setIsLoading(false);
+        }
     }, [project]);
 
     if (!project) return null;
@@ -68,14 +104,6 @@ export default function ProjectDetails({ project }) {
                 <article className="prose prose-invert prose-pre:bg-[#252526] prose-pre:border prose-pre:border-gray-700 prose-headings:text-white prose-a:text-blue-400 hover:prose-a:text-blue-300 py-6">
                     {isLoading ? <p>Cargando README...</p> : <ReactMarkdown>{readme}</ReactMarkdown>}
                 </article>
-
-                {/* --- VISTA PREVIA (IFRAME) --- */}
-                <section className="mt-8">
-                    <h2 className="text-2xl font-bold text-white mb-4">Vista Previa Interactiva</h2>
-                    <div className="w-full h-[600px] bg-[#252526] rounded-lg border border-gray-700 overflow-hidden">
-                        <iframe src={project.liveUrl} className="w-full h-full border-none" title={`Vista previa de ${project.name}`} />
-                    </div>
-                </section>
             </div>
         </div>
     );
