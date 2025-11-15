@@ -60,7 +60,7 @@ export default function Sidebar() {
                 </nav>
 
                 {/* Iconos de utilidad inferiores */}
-                <div className="flex flex-col items-center space-y-1 md:space-y-2 w-full flex-shrink-0 mt-auto pb-6 md:pb-0">
+                <div className="flex flex-col items-center space-y-1 md:space-y-2 w-full flex-shrink-0 mt-auto pb-8 md:pb-0">
                     <NavItem section="contact" tooltip="Contact Me">
                         <VscMail />
                     </NavItem>
