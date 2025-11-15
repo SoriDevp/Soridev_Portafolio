@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="488.49066"
+   height="105.49634"
+   viewBox="0 0 129.24649 27.912573"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="45.208591"
+       y="405.91544"
+       width="725.26123"
+       height="230.85239"
+       id="rect1" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-1.1477779,-57.13647)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-12.195769,-58.280207)"
+       id="text1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150.667px;font-family:Audiowide;-inkscape-font-specification:Audiowide;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#374845"><tspan
+         x="45.208984"
+         y="541.71685"
+         id="tspan11"><tspan
+           style="fill:#4400aa"
+           id="tspan1">&lt;</tspan><tspan
+           style="fill:#008080"
+           id="tspan7">S</tspan><tspan
+           style="fill:#d4aa00"
+           id="tspan8">D</tspan><tspan
+           style="fill:#008080"
+           id="tspan9">/</tspan><tspan
+           style="fill:#4400aa"
+           id="tspan10">&gt;</tspan></tspan></text>
+  </g>
+</svg>

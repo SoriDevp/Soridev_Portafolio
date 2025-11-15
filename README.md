@@ -168,9 +168,14 @@ Contiene la información de todos los proyectos del portafolio:
 - `name`: Nombre del proyecto
 - `description`: Descripción breve
 - `technologies`: Array de tecnologías utilizadas
-- `readmeUrl`: Ruta al archivo README del proyecto
-- `repoUrl`: URL del repositorio en GitHub
+- `readmeUrl`: Ruta al archivo README del proyecto (opcional, se usa como fallback si GitHub falla)
+- `repoUrl`: URL del repositorio en GitHub. Soporta múltiples formatos:
+  - `https://github.com/owner/repo` - URL simple del repositorio
+  - `https://github.com/owner/repo/blob/main/README.md` - URL en formato blob (se extrae automáticamente la rama y el path)
+  - `https://github.com/owner/repo/blob/branch/path/to/README.md` - URL blob con rama y path específicos
 - `liveUrl`: URL de la versión en vivo (si está disponible)
+
+**Nota**: El sistema obtiene automáticamente el README desde GitHub usando la URL raw. Si la `repoUrl` está en formato blob, se extrae automáticamente la rama y se convierte a formato raw. Si falla la obtención desde GitHub, se usa `readmeUrl` como fallback.
 
 ### `education.json`
 
@@ -234,6 +239,7 @@ Este proyecto ha pasado por una refactorización significativa para mejorar su a
   - Se crearon **hooks personalizados** (`useEducationData`, `useProjectsData`) para centralizar la lógica de obtención de datos.
   - Se implementó **Lazy Loading** con `React.lazy` y `Suspense` para optimizar drásticamente el tiempo de carga inicial.
   - Se implementó **Context API** para gestión de estado global.
+  - Se mejoró la obtención de README desde GitHub para soportar múltiples formatos de URL (formato simple y formato blob), extrayendo automáticamente la rama y el path del archivo.
 - **Correcciones de Diseño Responsivo**:
   - Se solucionaron múltiples problemas de layout en dispositivos móviles, incluyendo la visibilidad del avatar en la cabecera y la superposición de elementos en las líneas de tiempo.
   - Se mejoró la experiencia en el explorador de proyectos para dispositivos móviles.
