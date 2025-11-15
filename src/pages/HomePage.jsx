@@ -28,8 +28,6 @@ const codeLines = [
     { type: "text", text: ": [" },
     { type: "string", text: '"React"' },
     { type: "text", text: ", " },
-    { type: "string", text: '"Node.js"' },
-    { type: "text", text: ", " },
     { type: "string", text: '"Tailwind"' },
     { type: "text", text: "],\n" },
     { type: "property", text: "  objetivo" },
@@ -38,7 +36,7 @@ const codeLines = [
     { type: "text", text: ",\n" },
     { type: "property", text: "  contacto" },
     { type: "text", text: ": " },
-    { type: "string", text: '"esteban@soridev.com"' },
+    { type: "string", text: '"contact@soridev.com"' },
     { type: "text", text: "\n};" },
 ];
 
