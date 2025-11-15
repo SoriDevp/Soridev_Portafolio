@@ -36,7 +36,7 @@ const codeLines = [
     { type: "text", text: ",\n" },
     { type: "property", text: "  contacto" },
     { type: "text", text: ": " },
-    { type: "string", text: '"contact@soridev.com"' },
+    { type: "string", text: '"contactme@soridev.com"' },
     { type: "text", text: "\n};" },
 ];
 

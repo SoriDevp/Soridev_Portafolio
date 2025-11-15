@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
 import { useProjectsData } from '../hooks/useProjectsData';
-import { IconReact, IconTypeScript, IconJS, IconNodeJs, IconTailwindCSS, IconHTML, IconCSS3, IconVite, IconFramerMotion } from '../assets/icons/tech';
+import { IconReact, IconTypeScript, IconJS, IconNodeJs, IconTailwindCSS, IconHTML5, IconCSS3, IconVite, IconFramerMotion } from '../assets/icons/tech';
 import { VscFileCode } from 'react-icons/vsc'; // Icono por defecto
 
 // Componente para seleccionar el icono correcto según la tecnología
@@ -22,7 +22,7 @@ const TechIcon = ({ technology, ...props }) => {
         case 'tailwindcss':
             return <IconTailwindCSS {...props} />;
         case 'html5':
-            return <IconHTML {...props} />;
+            return <IconHTML5 {...props} />;
         case 'css3':
             return <IconCSS3 {...props} />;
         case 'vite':

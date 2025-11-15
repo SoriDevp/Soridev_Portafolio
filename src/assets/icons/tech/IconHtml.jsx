@@ -1,4 +1,4 @@
-export default function IconHTML5({ className = '', ...props }) {
+export default function IconHTML55({ className = '', ...props }) {
     return (
         <svg
             fill="none"

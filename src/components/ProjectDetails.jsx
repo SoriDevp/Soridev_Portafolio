@@ -8,7 +8,7 @@ import {
     IconJS,
     IconNodeJs,
     IconTailwindCSS,
-    IconHTML,
+    IconHTML5,
     IconCSS3,
     IconVite,
     IconFramerMotion,
@@ -40,7 +40,7 @@ const TechIcon = ({ technology, className = "w-8 h-8" }) => {
             return <IconTailwindCSS className={className} />;
         case 'html5':
         case 'html':
-            return <IconHTML className={className} />;
+            return <IconHTML5 className={className} />;
         case 'css3':
         case 'css':
             return <IconCSS3 className={className} />;
@@ -71,7 +71,7 @@ export default function ProjectDetails({ project }) {
 
     useEffect(() => {
         setIsLoading(true);
-        
+
         // Si hay repoUrl, intentar obtener el README desde GitHub
         if (project.repoUrl) {
             fetchGitHubReadme(project.repoUrl)

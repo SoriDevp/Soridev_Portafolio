@@ -6,7 +6,7 @@ import { useEducationData } from '../../hooks/useEducationData';
 import {
   IconApi,
   IconCSS3,
-  IconHTML,
+  IconHTML5,
   IconIA,
   IconJS,
   IconNextJs,
@@ -25,7 +25,7 @@ const technologies = [
   { Icon: IconTypeScript, name: 'TypeScript' },
   { Icon: IconTailwindCSS, name: 'TailwindCSS' },
   { Icon: IconCSS3, name: 'CSS3' },
-  { Icon: IconHTML, name: 'HTML5' },
+  { Icon: IconHTML5, name: 'HTML5' },
   { Icon: IconApi, name: 'APIs' },
   { Icon: IconIA, name: 'IA' },
   { Icon: IconMySQL, name: 'MySQL' },
