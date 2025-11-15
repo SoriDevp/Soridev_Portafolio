@@ -3,7 +3,7 @@ export { default as IconTypeScript } from './IconTypeScript';
 export { default as IconJS } from './IconJS';
 export { default as IconNodeJs } from './IconNodeJs';
 export { default as IconTailwindCSS } from './IconTailwind';
-export { default as IconHTML5 } from './IconHTML55';
+export { default as IconHTML5 } from './IconHTML5';
 export { default as IconCSS3 } from './IconCSS3';
 export { default as IconApi } from './IconApi';
 export { default as IconIA } from './IconIA';
